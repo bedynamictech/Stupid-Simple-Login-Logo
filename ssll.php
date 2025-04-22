@@ -2,7 +2,7 @@
 /*
 Plugin Name: Stupid Simple Login Logo
 Description: Easily change the logo displayed on the Login page.
-Version: 1.3.2
+Version: 1.3.3
 Author: Dynamic Technologies
 Author URI: http://bedynamic.tech
 Plugin URI: http://github.com/bedynamictech/Stupid-Simple-Login-Logo
@@ -27,10 +27,7 @@ function ssll_add_menu() {
         'Stupid Simple',
         'manage_options',
         'stupidsimple',
-        function () {
-            wp_redirect('https://bedynamic.tech/stupid-simple/');
-            exit;
-        },
+        'stupid_simple_parent_page',
         'dashicons-hammer',
         99
     );
@@ -43,6 +40,15 @@ function ssll_add_menu() {
         'login-logo',
         'ssll_settings_page_content'
     );
+}
+
+function stupid_simple_parent_page() {
+    ?>
+    <div class="wrap">
+      <h1>Thanks for using Stupid Simple plugins!</h1>
+      <p>This page doesn't contain anything useful, so here is some text.</p>
+    </div>
+    <?php
 }
 
 // Settings Page Content
