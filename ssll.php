@@ -5,9 +5,9 @@ Description: Easily change the logo displayed on the Login page.
 Version: 1.3.2
 Author: Dynamic Technologies
 Author URI: http://bedynamic.tech
+Plugin URI: http://github.com/bedynamictech/Stupid-Simple-Login-Logo
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Update URI: https://github.com/bedynamictech/StupidSimplePlugins/tree/main/ssll
 */
 
 // Prevent direct access.
