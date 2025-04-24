@@ -1,18 +1,28 @@
 <?php
-/*
-Plugin Name: Stupid Simple Login Logo
-Description: Easily change the logo displayed on the Login page.
-Version: 1.3.3
-Author: Dynamic Technologies
-Author URI: http://bedynamic.tech
-Plugin URI: http://github.com/bedynamictech/Stupid-Simple-Login-Logo
-License: GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
-*/
+/**
+ * Plugin Name: Stupid Simple Login Logo
+ * Description: Easily change the logo displayed on the Login page.
+ * Version: 1.3.4
+ * Author: Dynamic Technologies
+ * Author URI: https://bedynamic.tech
+ * Plugin URI: https://github.com/bedynamictech/Stupid-Simple-Login-Logo
+ * License: GPLv2 or later
+ * License URI: http://www.gnu.org/licenses/gpl-2.0.html
+ * Text Domain: ssll
+ * Domain Path: /languages
+ */
 
 // Prevent direct access.
 if (!defined('ABSPATH')) {
     exit;
+}
+
+// Add Settings link on the Plugins page
+add_filter( 'plugin_action_links_' . plugin_basename( __FILE__ ), 'ssll_action_links' );
+function ssll_action_links( $links ) {
+    $settings_link = '<a href="' . admin_url( 'admin.php?page=login-logo' ) . '">Settings</a>';
+    array_unshift( $links, $settings_link );
+    return $links;
 }
 
 // Define constant for option key
